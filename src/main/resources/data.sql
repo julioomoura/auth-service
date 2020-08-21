@@ -1,0 +1,1 @@
+INSERT INTO USER(ID, NAME, EMAIL, PASSWORD, IMAGE_URL) VALUES (1, 'name', 'email', 'password', 'https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.adorocinema.com%2Fpersonalidades%2Fpersonalidade-19358%2F&psig=AOvVaw2J4p2j33UlyQIpMtKseZ7_&ust=1598134684684000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjQ3-SpresCFQAAAAAdAAAAABAD');

@@ -25,8 +25,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-            .and().addFilterBefore(new TokenAuthenticationFilter(tokenService, customUserDetailsService), UsernamePasswordAuthenticationFilter.class);
-            .and().authorizeRequests()
+            .and().addFilterBefore(new TokenAuthenticationFilter(tokenService, customUserDetailsService), UsernamePasswordAuthenticationFilter.class)
+            .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .antMatchers(HttpMethod.GET, "/users").permitAll()
                 .anyRequest().authenticated();

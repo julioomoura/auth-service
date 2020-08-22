@@ -1,5 +1,6 @@
 package com.julio.authservice.controller;
 
+import com.julio.authservice.config.security.TokenService;
 import com.julio.authservice.dto.AuthDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,12 +20,16 @@ public class AuthController {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    @Autowired
+    private TokenService tokenService;
+
     @PostMapping
     public ResponseEntity<Void> authenticate(@RequestBody AuthDTO authDTO) {
         UsernamePasswordAuthenticationToken login = authDTO.converter();
         try {
-            authenticationManager.authenticate(login);
-            return ResponseEntity.ok().build();
+            Authentication authentication = authenticationManager.authenticate(login);
+            String token = tokenService.generateToken(authentication);
+            return ResponseEntity.ok().header("Authorization", token).build();
         } catch (AuthenticationException exception) {
             return ResponseEntity.badRequest().build();
         }

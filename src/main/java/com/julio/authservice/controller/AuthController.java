@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/auth")
 public class AuthController {
@@ -24,7 +26,7 @@ public class AuthController {
     private TokenService tokenService;
 
     @PostMapping
-    public ResponseEntity<Void> authenticate(@RequestBody AuthDTO authDTO) {
+    public ResponseEntity<Void> authenticate(@RequestBody @Valid AuthDTO authDTO) {
         UsernamePasswordAuthenticationToken login = authDTO.converter();
         try {
             Authentication authentication = authenticationManager.authenticate(login);

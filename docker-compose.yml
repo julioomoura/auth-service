@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  backend:
+    build: .
+    restart: always
+    environment:
+      - JWT_SECRET=v,/q_LHW38R3)\aL8U5g^2
+      - JWT_EXPIRATION=86 400 000
+    expose:
+      - 8080
+    ports:
+      - 8080:8080

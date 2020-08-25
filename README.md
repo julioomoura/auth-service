@@ -12,5 +12,5 @@ That's a project to apply acquired knowledges about Java, Spring Boot, Spring Se
 ## Run the project
 
 ```sh
-    $ ./mvnw clean package && docker-compose up
+$ ./mvnw clean package && docker-compose up
 ```

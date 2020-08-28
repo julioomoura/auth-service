@@ -12,6 +12,10 @@ public class Chapter {
     private Long id;
     private String name;
 
+    public Chapter(String name) {
+        this.name = name;
+    }
+
     public Long getId() {
         return id;
     }

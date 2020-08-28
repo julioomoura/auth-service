@@ -5,5 +5,6 @@ import com.julio.authservice.model.Chapter;
 import java.util.List;
 
 public interface ChapterService {
-    public List<Chapter> findAll();
+    List<Chapter> findAll();
+    Chapter create(Chapter chapter);
 }

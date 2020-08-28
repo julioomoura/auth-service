@@ -18,4 +18,9 @@ public class ChapterServiceImpl implements ChapterService {
     public List<Chapter> findAll() {
         return chapterRepository.findAll();
     }
+
+    @Override
+    public Chapter create(Chapter chapter) {
+        return chapterRepository.save(chapter);
+    }
 }

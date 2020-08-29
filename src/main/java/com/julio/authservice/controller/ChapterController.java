@@ -2,7 +2,6 @@ package com.julio.authservice.controller;
 
 import com.julio.authservice.dto.ChapterDTO;
 import com.julio.authservice.dto.ChapterDTOCreation;
-import com.julio.authservice.model.Chapter;
 import com.julio.authservice.service.ChapterService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

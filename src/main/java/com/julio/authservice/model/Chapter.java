@@ -12,6 +12,9 @@ public class Chapter {
     private Long id;
     private String name;
 
+    public Chapter() {
+    }
+
     public Chapter(String name) {
         this.name = name;
     }

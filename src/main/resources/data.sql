@@ -1,2 +1,10 @@
 INSERT INTO USER(ID, NAME, EMAIL, PASSWORD, IMAGE_URL) VALUES (1, 'name', 'email', '$2a$10$PAeHtcH9qcXzFOjLBRk9dOM4L49Au64H3jhVWkyFx9cCK4DaO1IgW', 'https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.adorocinema.com%2Fpersonalidades%2Fpersonalidade-19358%2F&psig=AOvVaw2J4p2j33UlyQIpMtKseZ7_&ust=1598134684684000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjQ3-SpresCFQAAAAAdAAAAABAD');
+INSERT INTO USER(ID, NAME, EMAIL, PASSWORD, IMAGE_URL) VALUES (2, 'admin', 'admin', '$2a$10$PAeHtcH9qcXzFOjLBRk9dOM4L49Au64H3jhVWkyFx9cCK4DaO1IgW', 'https://www.google.com/url?sa=i&url=http%3A%2F%2Fwww.adorocinema.com%2Fpersonalidades%2Fpersonalidade-19358%2F&psig=AOvVaw2J4p2j33UlyQIpMtKseZ7_&ust=1598134684684000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMjQ3-SpresCFQAAAAAdAAAAABAD');
+
+INSERT INTO AUTHORITY(ID, NAME) VALUES (1, 'ROLE_USER');
+INSERT INTO AUTHORITY(ID, NAME) VALUES (2, 'ROLE_ADMIN');
+
+INSERT INTO USER_AUTHORITIES(USER_ID, AUTHORITIES_ID) VALUES (1, 1);
+INSERT INTO USER_AUTHORITIES(USER_ID, AUTHORITIES_ID) VALUES (2, 2);
+
 INSERT INTO CHAPTER(ID, NAME) VALUES (1, 'Java');

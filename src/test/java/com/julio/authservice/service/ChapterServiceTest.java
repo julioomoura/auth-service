@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 import com.julio.authservice.model.Chapter;
 import com.julio.authservice.repository.ChapterRepository;
 import com.julio.authservice.service.impl.ChapterServiceImpl;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.mock.mockito.MockBean;
@@ -58,5 +58,13 @@ class ChapterServiceTest {
         List<Chapter> chapters = chapterService.findAll();
 
         assertEquals(2, chapters.size());
+    }
+
+    @Test
+    void validateDeleteChapterById() {
+        Long id = 1L;
+        Mockito.doNothing().when(chapterRepository).deleteById(id);
+
+        chapterService.deleteById(id);
     }
 }

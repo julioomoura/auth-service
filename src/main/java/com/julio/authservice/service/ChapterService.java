@@ -7,4 +7,5 @@ import java.util.List;
 public interface ChapterService {
     List<Chapter> findAll();
     Chapter create(Chapter chapter);
+    void deleteById(Long id);
 }

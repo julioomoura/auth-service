@@ -23,4 +23,9 @@ public class ChapterServiceImpl implements ChapterService {
     public Chapter create(Chapter chapter) {
         return chapterRepository.save(chapter);
     }
+
+    @Override
+    public void deleteById(Long id) {
+        chapterRepository.deleteById(id);
+    }
 }

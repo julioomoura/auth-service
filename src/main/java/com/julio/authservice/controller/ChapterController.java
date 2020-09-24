@@ -4,12 +4,10 @@ import com.julio.authservice.dto.ChapterDTO;
 import com.julio.authservice.dto.ChapterDTOCreation;
 import com.julio.authservice.service.ChapterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import java.net.URI;
-import java.util.List;
 
 @RestController
 @RequestMapping("/chapters")
@@ -19,8 +17,11 @@ public class ChapterController {
     private ChapterService chapterService;
 
     @GetMapping
-    public ResponseEntity<List<ChapterDTO>> retrieveChapters() {
-        List<ChapterDTO> chapters = ChapterDTO.convert(chapterService.findAll());
+    public ResponseEntity<Page<ChapterDTO>> retrieveChapters(
+        @RequestParam Integer page,
+        @RequestParam Integer size
+    ) {
+        Page<ChapterDTO> chapters = ChapterDTO.convert(chapterService.findAll(page, size));
         return ResponseEntity.ok(chapters);
     }
 

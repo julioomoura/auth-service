@@ -1,11 +1,10 @@
 package com.julio.authservice.service;
 
 import com.julio.authservice.model.Chapter;
-
-import java.util.List;
+import org.springframework.data.domain.Page;
 
 public interface ChapterService {
-    List<Chapter> findAll();
+    Page<Chapter> findAll(Integer page, Integer size);
     Chapter create(Chapter chapter);
     void deleteById(Long id);
 }

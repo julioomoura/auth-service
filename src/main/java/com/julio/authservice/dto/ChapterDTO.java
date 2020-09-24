@@ -1,9 +1,7 @@
 package com.julio.authservice.dto;
 
 import com.julio.authservice.model.Chapter;
-
-import java.util.List;
-import java.util.stream.Collectors;
+import org.springframework.data.domain.Page;
 
 public class ChapterDTO {
     private Long id;
@@ -14,8 +12,8 @@ public class ChapterDTO {
         this.name = chapter.getName();
     }
 
-    public static List<ChapterDTO> convert(List<Chapter> chapters) {
-        return chapters.stream().map(ChapterDTO::new).collect(Collectors.toList());
+    public static Page<ChapterDTO> convert(Page<Chapter> chapters) {
+        return chapters.map(ChapterDTO::new);
     }
 
     public Long getId() {

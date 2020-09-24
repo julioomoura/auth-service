@@ -4,9 +4,10 @@ import com.julio.authservice.model.Chapter;
 import com.julio.authservice.repository.ChapterRepository;
 import com.julio.authservice.service.ChapterService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 public class ChapterServiceImpl implements ChapterService {
@@ -15,8 +16,9 @@ public class ChapterServiceImpl implements ChapterService {
     private ChapterRepository chapterRepository;
 
     @Override
-    public List<Chapter> findAll() {
-        return chapterRepository.findAll();
+    public Page<Chapter> findAll(Integer page, Integer size) {
+        Pageable pagination = PageRequest.of(page, size);
+        return chapterRepository.findAll(pagination);
     }
 
     @Override

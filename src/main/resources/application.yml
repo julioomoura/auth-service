@@ -11,5 +11,5 @@ spring:
             path: /h2-console
 
 jwt:
-    secret: ${JWT_SECRET}
-    expiration: ${JWT_EXPIRATION}
+    secret: 1235123123
+    expiration: 1231231231

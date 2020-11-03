@@ -8,6 +8,7 @@ That's a project to apply acquired knowledges about Java, Spring Boot, Spring Se
  * H2 Database
  * Spring Security
  * Docker
+ * JUnit 5
 
 ## Run the project
 
